@@ -24,7 +24,11 @@ app.get('/herolist', (req, res) => {
     // 接收数据 查询条件
     const query = req.query.query
     dbHelper.find('cqlist', {}, (result) => {
-        const temArr = result.filter(v => {
+       
+        // console.log(temArr);
+        
+        result=result.reverse()
+        let temArr = result.filter(v => {
             if (v.heroName.indexOf(query) != -1 || v.skillName.indexOf(query) != -1) {
                 return true
             }

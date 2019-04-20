@@ -104,7 +104,7 @@
                       type="text"
                       class="form-control"
                       id="skill"
-                      name="skill"
+                      name="skillName"
                       placeholder="请输入技能"
                     />
                   </div>
@@ -115,14 +115,14 @@
                     <input
                       type="file"
                       class="form-control"
-                      id="icon"
-                      name="icon"
+                      id="heroIcon"
+                      name="heroIcon"
                     />
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">新增</button>
+                    <button type="button" class="btn btn-default">新增</button>
                   </div>
                 </div>
               </form>
@@ -139,3 +139,42 @@
   Include all compiled plugins (below), or include individual files as needed
 -->
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script>
+$(function  (){
+// const heroName=$('#heroName').val()
+// const skillName=$('#skill').val()
+
+
+function addData (){
+  const formDATA=new FormData($('.form-horizontal')[0]);
+  $.ajax({
+  url:'/heroAdd',
+  type:'post',
+  data:formDATA,
+  contentType:false,
+  processData:false,
+  success:function(data){
+console.log(data);
+if(data.mode){
+  window.location.href='./index.html'
+}else{
+  alert('失败')
+}
+
+  }
+
+})
+}
+
+$('.btn-default').click(function  (){
+  // console.log(111111111111111);
+  
+  addData ()
+ 
+})
+})
+
+
+
+
+</script>
