@@ -1,0 +1,25 @@
+{
+  "name": "cqmanager30",
+  "version": "1.0.0",
+  "description": "项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lzy-more/cqmanager30.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lzy-more/cqmanager30/issues"
+  },
+  "homepage": "https://github.com/lzy-more/cqmanager30#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongodb": "^3.2.3",
+    "multer": "^1.4.1"
+  }
+}
